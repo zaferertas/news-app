@@ -21,7 +21,7 @@ class NewsItem(
 
     @SerializedName("urlToImage")
     @ColumnInfo(name = "urlToImage")
-    val urlToImage: String,
+    val urlToImage: String?,
 
     @SerializedName("publishedAt")
     @ColumnInfo(name = "publishedAt")

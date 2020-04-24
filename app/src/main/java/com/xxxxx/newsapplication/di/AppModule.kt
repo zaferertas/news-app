@@ -3,8 +3,6 @@ package com.xxxxx.newsapplication.di
 import android.app.Application
 import androidx.room.Room
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.xxxxx.newsapplication.MainViewModelFactory
-import com.xxxxx.newsapplication.data.Repository
 import com.xxxxx.newsapplication.data.local.NewsDao
 import com.xxxxx.newsapplication.data.local.NewsDatabase
 import com.xxxxx.newsapplication.data.remote.NewsApiService
@@ -40,20 +38,5 @@ class AppModule {
     @Provides
     fun provideNewsDao(db: NewsDatabase): NewsDao {
         return db.newsDao()
-    }
-
-}
-
-@Module
-class ViewModelFactoryModule {
-
-    @Provides
-    @Singleton
-    fun provideMainViewModelFactory(
-        repository: Repository
-    ): MainViewModelFactory {
-        return MainViewModelFactory(
-            repository
-        )
     }
 }
